@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Minha Lista de Compras</h1>
+            <p class="subtitle">Organize suas compras de forma simples e prática</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="itemInput" 
+                    placeholder="Digite um item para adicionar..."
+                    autocomplete="off"
+                >
+                <input 
+                    type="number" 
+                    id="quantityInput" 
+                    placeholder="Qtd"
+                    value="1"
+                    min="1"
+                    max="999"
+                    class="quantity-input"
+                >
+                <button id="addBtn" class="btn btn-add">Adicionar</button>
+            </div>
+            <div class="info">
+                <span id="totalItems" class="badge badge-info">0 itens</span>
+                <span id="checkedItems" class="badge badge-success">0 comprado</span>
+                <span id="totalQuantity" class="badge badge-warning">Total: 0</span>
+            </div>
+        </div>
+
+        <div class="list-section">
+            <ul id="shoppingList" class="shopping-list">
+                <li class="empty-state">Sua lista está vazia. Comece adicionando itens!</li>
+            </ul>
+        </div>
+
+        <div class="actions">
+            <button id="clearBtn" class="btn btn-danger">Limpar Tudo</button>
+            <button id="exportBtn" class="btn btn-info">Exportar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Item</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="editItemText">Descrição do Item:</label>
+                    <input type="text" id="editItemText" placeholder="Digite a descrição do item">
+                </div>
+                <div class="form-group">
+                    <label for="editItemQuantity">Quantidade:</label>
+                    <input type="number" id="editItemQuantity" min="1" max="999" placeholder="Quantidade">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelEditBtn" class="btn btn-cancel">Cancelar</button>
+                <button id="saveEditBtn" class="btn btn-save">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
